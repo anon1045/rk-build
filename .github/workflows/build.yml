@@ -48,13 +48,14 @@ jobs:
                 make toolchain/install -j$(nproc)
                 make -j$(nproc) 'IGNORE_ERRORS=n m'
                 rm -rf bin/targets/rockchip/armv8/packages
+                echo "D=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
             - name: Create release
               uses: ncipollo/release-action@v1.12.0
               with:
                 allowUpdates: true
-                name: Rockchip v6.1 Images
+                name: Rockchip Images ${{ env.D }}
                 tag: 6.1
                 replacesArtifacts: true
-                prerelease: true
+                prerelease: false
                 token: "${{ secrets.GITHUB_TOKEN }}"
                 artifacts: openwrt/bin/targets/rockchip/armv8/*
