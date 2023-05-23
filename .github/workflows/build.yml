@@ -22,7 +22,6 @@ jobs:
                 git config --global user.name Your Name
                 git remote add openw https://github.com/openwrt/openwrt.git
                 git checkout linux-6.1
-                git pull --rebase openw master
                 ./scripts/feeds update -a
                 ./scripts/feeds install -a
                 cd feeds/luci
