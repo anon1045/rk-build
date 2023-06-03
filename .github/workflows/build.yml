@@ -20,7 +20,7 @@ jobs:
                 rm -f target/linux/generic/config-6.1
                 rm -rf package/boot/uboot-rockchip
                 rm -rf package/boot/arm-trusted-firmware-rockchip
-                rm -rf scripts/download.pl
+                rm -f scripts/download.pl
                 cd -
                 cp -rf rk/* openwrt/
                 cd openwrt
