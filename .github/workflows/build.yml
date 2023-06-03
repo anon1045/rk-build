@@ -1,7 +1,5 @@
 name: Build NanoPi R6C/R6S OpenWrt Images
-on:
-  schedule:
-    - cron: '0 9 * * *'
+on: [push]
 
 jobs:
     build:
