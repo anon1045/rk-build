@@ -41,7 +41,7 @@ jobs:
                 ./scripts/feeds install -a -f
                 mv rkconfig .config
                 make defconfig
-                make download -j32
+                make download
                 make tools/install -j$(nproc)
                 make toolchain/install -j$(nproc)
                 make -j$(nproc) 'IGNORE_ERRORS=n m'
