@@ -25,14 +25,14 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
 
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -168,6 +168,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3568) += \
- 	rk3568-bpi-r2-pro.dtb \
- 	rk3568-evb.dtb \
- 	rk3568-nanopi-r5s.dtb \
-+	rk3566-quartz64-a.dtb \
+@@ -169,6 +169,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3399) += \
+ dtb-$(CONFIG_ROCKCHIP_RK3568) += \
+ 	rk3566-anbernic-rgxx3.dtb \
  	rk3566-radxa-cm3-io.dtb \
- 	rk3568-rock-3a.dtb
- 
++	rk3566-quartz64-a.dtb \
+ 	rk3568-bpi-r2-pro.dtb \
+ 	rk3568-nanopi-r5s.dtb \
+ 	rk3568-evb.dtb \
 --- /dev/null
 +++ b/arch/arm/dts/rk3566-quartz64-a-u-boot.dtsi
 @@ -0,0 +1,25 @@
@@ -75,9 +75,9 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
 +};
 --- a/arch/arm/mach-rockchip/rk3568/Kconfig
 +++ b/arch/arm/mach-rockchip/rk3568/Kconfig
-@@ -16,6 +16,11 @@ config TARGET_NANOPI_R5S_RK3568
- 	help
- 	  NanoPi R5S FriendlyElec is a board for Rockchp RK3568.
+@@ -29,6 +29,11 @@ config TARGET_ANBERNIC_RGXX3_RK3566
+ 
+ endchoice
  
 +config TARGET_QUARTZ64_A_RK3566
 +	bool "Quartz64 Model A RK3566 development board"
@@ -87,9 +87,9 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
  config ROCKCHIP_BOOT_MODE_REG
  	default 0xfdc20200
  
-@@ -31,5 +36,6 @@ config SYS_MALLOC_F_LEN
- source "board/rockchip/bpi-r2-pro-rk3568/Kconfig"
+@@ -45,5 +50,6 @@ source "board/rockchip/bpi-r2-pro-rk3568
  source "board/rockchip/evb_rk3568/Kconfig"
+ source "board/anbernic/rgxx3_rk3566/Kconfig"
  source "board/friendlyelec/nanopi-r5s-rk3568/Kconfig"
 +source "board/pine64/quartz64-a-rk3566/Kconfig"
  

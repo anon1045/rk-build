@@ -5,10 +5,10 @@
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-PKG_VERSION:=2023.5.4
-PKG_RELEASE:=5
+PKG_VERSION:=2023.07-rc3
+PKG_RELEASE:=1
 
-PKG_HASH:=34cc121372af4599ca7a192f59c524b64733c21354cd15404032208eb469c97e
+PKG_HASH:=42ec083674bd30fa4c16e78c3f5f453c08d9f737595a77b5dda595ac3a09d82f
 
 PKG_MAINTAINER:=Tobias Maedel <openwrt@tbspace.de>
 
@@ -142,7 +142,7 @@ define U-Boot/rock-3a-rk3568
     radxa_rock-3a
   DEPENDS:=+PACKAGE_u-boot-rock-3a-rk3568:arm-trusted-firmware-rockchip
   PKG_BUILD_DEPENDS:=arm-trusted-firmware-rockchip
-  UBOOT_CONFIG:= evb-rk3568
+  UBOOT_CONFIG:= nanopi-r5s-rk3568
   ATF:=rk3568_bl31.elf
   DDR_3568:=$(1)
 endef

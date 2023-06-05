@@ -25,12 +25,12 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
 
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -166,6 +166,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3399) += \
- 
+@@ -169,6 +169,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3399) += \
  dtb-$(CONFIG_ROCKCHIP_RK3568) += \
- 	rk3568-evb.dtb \
-+	rk3568-nanopi-r5s.dtb \
+ 	rk3566-anbernic-rgxx3.dtb \
  	rk3566-radxa-cm3-io.dtb \
++	rk3568-nanopi-r5s.dtb \
+ 	rk3568-evb.dtb \
  	rk3568-rock-3a.dtb
  
 --- /dev/null
@@ -75,7 +75,7 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
 +};
 --- a/arch/arm/mach-rockchip/rk3568/Kconfig
 +++ b/arch/arm/mach-rockchip/rk3568/Kconfig
-@@ -6,6 +6,11 @@ config TARGET_EVB_RK3568
+@@ -9,6 +9,11 @@ config TARGET_EVB_RK3568
  	help
  	  RK3568 EVB is a evaluation board for Rockchp RK3568.
  
@@ -84,13 +84,13 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
 +	help
 +	  NanoPi R5S FriendlyElec is a board for Rockchp RK3568.
 +
- config ROCKCHIP_BOOT_MODE_REG
- 	default 0xfdc20200
- 
-@@ -19,5 +24,6 @@ config SYS_MALLOC_F_LEN
- 	default 0x2000
+ config TARGET_ANBERNIC_RGXX3_RK3566
+ 	bool "Anbernic RGXX3"
+ 	help
+@@ -33,5 +38,6 @@ config SYS_MALLOC_F_LEN
  
  source "board/rockchip/evb_rk3568/Kconfig"
+ source "board/anbernic/rgxx3_rk3566/Kconfig"
 +source "board/friendlyelec/nanopi-r5s-rk3568/Kconfig"
  
  endif

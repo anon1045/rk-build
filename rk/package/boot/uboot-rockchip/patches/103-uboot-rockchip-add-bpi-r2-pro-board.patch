@@ -24,14 +24,14 @@ Subject: [PATCH] uboot: rockchip: add bpi r2 pro board
 
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -165,6 +165,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3399) += \
- 	rk3399pro-rock-pi-n10.dtb
- 
+@@ -169,6 +169,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3399) += \
  dtb-$(CONFIG_ROCKCHIP_RK3568) += \
-+	rk3568-bpi-r2-pro.dtb \
- 	rk3568-evb.dtb \
- 	rk3568-nanopi-r5s.dtb \
+ 	rk3566-anbernic-rgxx3.dtb \
  	rk3566-radxa-cm3-io.dtb \
++	rk3568-bpi-r2-pro.dtb \
+ 	rk3568-nanopi-r5s.dtb \
+ 	rk3568-evb.dtb \
+ 	rk3568-rock-3a.dtb
 --- /dev/null
 +++ b/arch/arm/dts/rk3568-bpi-r2-pro-u-boot.dtsi
 @@ -0,0 +1,25 @@
@@ -78,8 +78,9 @@ Subject: [PATCH] uboot: rockchip: add bpi r2 pro board
 +};
 --- a/arch/arm/mach-rockchip/rk3568/Kconfig
 +++ b/arch/arm/mach-rockchip/rk3568/Kconfig
-@@ -1,5 +1,10 @@
- if ROCKCHIP_RK3568
+@@ -3,6 +3,11 @@ if ROCKCHIP_RK3568
+ choice
+ 	prompt "RK3568/RK3566 board select"
  
 +config TARGET_BPI_R2_PRO_RK3568
 +	bool "Banana Pi R2 Pro RK3566 development board"
@@ -89,14 +90,14 @@ Subject: [PATCH] uboot: rockchip: add bpi r2 pro board
  config TARGET_EVB_RK3568
  	bool "RK3568 evaluation board"
  	select BOARD_LATE_INIT
-@@ -23,6 +28,7 @@ config SYS_SOC
+@@ -36,6 +41,7 @@ config SYS_SOC
  config SYS_MALLOC_F_LEN
  	default 0x2000
  
 +source "board/rockchip/bpi-r2-pro-rk3568/Kconfig"
  source "board/rockchip/evb_rk3568/Kconfig"
+ source "board/anbernic/rgxx3_rk3566/Kconfig"
  source "board/friendlyelec/nanopi-r5s-rk3568/Kconfig"
- 
 --- /dev/null
 +++ b/board/rockchip/bpi-r2-pro-rk3568/Kconfig
 @@ -0,0 +1,15 @@

@@ -25,7 +25,7 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
 
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -176,6 +176,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3568) += \
+@@ -179,6 +179,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3568) += \
  dtb-$(CONFIG_ROCKCHIP_RK3588) += \
  	rk3588-edgeble-neu6a-io.dtb \
  	rk3588-evb1-v10.dtb \

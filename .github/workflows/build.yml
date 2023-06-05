@@ -18,6 +18,7 @@ jobs:
                 cd openwrt
                 rm -rf target/linux/rockchip
                 rm -f target/linux/generic/config-6.1
+                rm -f target/linux/generic/pending-6.1/729-net-phy-realtek-introduce-rtl822x_probe.patch
                 rm -rf package/boot/uboot-rockchip
                 rm -rf package/boot/arm-trusted-firmware-rockchip
                 cd -
@@ -34,7 +35,7 @@ jobs:
                 sed -i "70s/'0'/'1'/" feeds/luci/applications/luci-app-statistics/root/etc/config/luci_statistics
                 sed -i "83s/'0'/'1'/" feeds/luci/applications/luci-app-statistics/root/etc/config/luci_statistics
                 sed -i "193s/'0'/'1'/" feeds/luci/applications/luci-app-statistics/root/etc/config/luci_statistics
-                sed -i "209s/'0'/'1'/" feeds/luci/applications/luci-app-statistics/root/etc/config/luci_statistics
+                sed -i "210s/'0'/'1'/" feeds/luci/applications/luci-app-statistics/root/etc/config/luci_statistics
                 sed -i "13s/'1'/'0'/" feeds/packages/utils/dockerd/files/etc/config/dockerd
                 ./scripts/feeds update -a
                 ./scripts/feeds install -a -f
