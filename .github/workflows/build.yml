@@ -24,6 +24,7 @@ jobs:
                 rm -rf package/boot/uboot-rockchip
                 rm -rf package/boot/arm-trusted-firmware-rockchip
                 rm -rf package/kernel/mac80211
+                rm -rf package/firmware/linux-firmware
                 cd -
                 cp -rf rk/* openwrt/
                 cd openwrt
