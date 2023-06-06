@@ -2,6 +2,7 @@ name: Build Rockchip OpenWrt Images
 on:
   schedule:
     - cron: '0 14 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
     build:
@@ -23,6 +24,7 @@ jobs:
                 rm -f target/linux/generic/pending-6.1/729-net-phy-realtek-introduce-rtl822x_probe.patch
                 rm -rf package/boot/uboot-rockchip
                 rm -rf package/boot/arm-trusted-firmware-rockchip
+                rm -rf package/kernel/mac80211
                 cd -
                 cp -rf rk/* openwrt/
                 cd openwrt
